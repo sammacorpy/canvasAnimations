@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CodingEra</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+        canvas {
+            border: none;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+        }
+        
+        
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: black;
+        }
+        
+        .spinner-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #000000;
+            z-index: 999999;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            background-color: #ffffff;
+            position: absolute;
+            top: 48%;
+            left: 48%;
+            -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+            animation: sk-rotateplane 1.2s infinite ease-in-out;
+        }
+        
+        @-webkit-keyframes sk-rotateplane {
+            0% {
+                -webkit-transform: perspective(120px)
+            }
+            50% {
+                -webkit-transform: perspective(120px) rotateY(180deg)
+            }
+            100% {
+                -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+            }
+        }
+        
+        @keyframes sk-rotateplane {
+            0% {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+            }
+            50% {
+                transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+            }
+            100% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+                -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //Preloader
+            $(window).load(function() {
+                preloaderFadeOutTime = 1000;
+
+                function hidePreloader() {
+                    var preloader = $('.spinner-wrapper');
+                    preloader.fadeOut(preloaderFadeOutTime);
+                }
+                hidePreloader();
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <div class="spinner-wrapper">
+        <div class="spinner"></div>
+    </div>
+
+
+    <canvas id="base">
+            You do not have a canvas enabled browser
+        </canvas>
+        <canvas id="mycanvas"></canvas>
+        <canvas id="mycanvas2"></canvas>
+        <canvas id="mycanvas3"></canvas>
+        <canvas id="mycanvas4"></canvas>
+
+
+
+
+
+
+
+    <script src="stars.js"></script>
+
+</body>
+
+</html>
