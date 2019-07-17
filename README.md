@@ -1,4 +1,4 @@
-# canvas animated signup page
+# canvas animation dark space 
 
 git clone this project and open the stars_blink.html file in chrome to view.
 
